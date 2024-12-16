@@ -21,16 +21,9 @@ app.use(helmet());
 
 // Swagger Documentation Endpoint
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
-app.set('view engine', 'ejs');
-
-// Route to render the EJS page
-app.get('/api/users/authDiscord', (req, res) => {
-  res.render('index', { authUrl: process.env.DISCORD_AUTH_URI });
-});
 
 app.use('/api/users', userRoutes);
 app.use('/api/subscriptions', subscriptionRoutes);
-
 
 // Connect to MongoDB
 connectDB();

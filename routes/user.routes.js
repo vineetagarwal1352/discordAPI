@@ -177,7 +177,7 @@ router.put("/:id", authenticateToken, validateUpdatePassword, updatePassword);
  *         description: Error deleting user
  */
 router.delete("/:id", authenticateToken, deleteUser);
-router.get("/authRedirect", discordAuth);
+// router.get("/authRedirect", discordAuth);
 
 
 module.exports = router;
